@@ -1,0 +1,28 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "Creates an HTML file based on user input.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Connerjm/Team-Profile-Generator.git"
+  },
+  "author": "Conner Martin",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/Connerjm/Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/Connerjm/Team-Profile-Generator#readme"
+}
