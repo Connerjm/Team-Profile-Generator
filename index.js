@@ -1,8 +1,12 @@
+/* Imports */
+
 const inquirer = require("inquirer");
 const fs = require("fs");
+const parse = require("./src/parse");
 
-//Variables
+/* Variables */
 
+//Array of the questions to prompt the user.
 const questions = [
     {
         type: "input",
@@ -46,7 +50,7 @@ const questions = [
     }
 ];
 
-//Functions
+/* Functions */
 
 //Initializing function run at the start of the program.
 function init()
@@ -59,13 +63,13 @@ function promptsUser()
 {
     inquirer
         .prompt(questions)
-        .then(answers => {console.log(answers)})
+        .then(answers => {parse(answers)})
         .catch(error =>
             {
                 console.error(error);
             });
 }
 
-//function calls
+/* Function calls */
 
 init();
