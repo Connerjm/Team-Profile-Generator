@@ -14,7 +14,7 @@ Team Profile Generator is a Node.js command line application that will ask a use
 Start by cloning this project:
 
 ```bash
-$ git clone URLGOESHERE
+$ git clone https://github.com/Connerjm/Team-Profile-Generator.git
 ```
 
 First install dependencies:
