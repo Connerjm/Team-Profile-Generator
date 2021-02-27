@@ -1,6 +1,5 @@
 /* Imports */
 
-const Employee = require("../lib/Employee");
 const { Manager, Intern, Engineer } = require("../lib/SubEmployee");
 
 /* Main Functions */
@@ -8,8 +7,6 @@ const { Manager, Intern, Engineer } = require("../lib/SubEmployee");
 //Entry point to parse response from user.
 function parse(answers)
 {
-    console.log(answers);
-
     let employeesArr = parseEmployees(answers);
     return buildHTML(employeesArr);
 }
@@ -28,7 +25,7 @@ function parseEmployees(answers)
                 employeesArr.push(new Intern(employee.name, employee.id, employee.email, employee.school));
         });
 
-        console.log(employeesArr);
+        console.log(employeesArr);//TODO delete
 
     return employeesArr;
 }
@@ -56,7 +53,7 @@ function buildHeader()
     //TODO
 }
 
-//Builds an individual employee card.
+//Builds an individual employee HTML card.
 function buildEmployeeCard(employee)
 {
     //TODO
