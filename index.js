@@ -99,4 +99,5 @@ function processAnswers()
 
 /* Function calls */
 
+//Begins the program.
 init();

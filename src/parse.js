@@ -18,7 +18,18 @@ function parse(answers)
 function parseEmployees(answers)
 {
     let employeesArr = [];
-    //TODO
+    answers.forEach(employee =>
+        {
+            if(employee.hasOwnProperty("officeNum"))
+                employeesArr.push(new Manager(employee.name, employee.id, employee.email, employee.officeNum));
+            else if(employee.hasOwnProperty("github"))
+                employeesArr.push(new Engineer(employee.name, employee.id, employee.email, employee.github));
+            else
+                employeesArr.push(new Intern(employee.name, employee.id, employee.email, employee.school));
+        });
+
+        console.log(employeesArr);
+
     return employeesArr;
 }
 
