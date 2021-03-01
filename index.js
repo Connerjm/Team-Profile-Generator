@@ -94,6 +94,7 @@ function promptsUser(employeeType)
 function processAnswers()
 {
     let html = parse(answersArr);
+    console.log(html);
     //TODO write to file.
 }
 
