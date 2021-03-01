@@ -1,4 +1,4 @@
-# Team-Profile-Generator
+# Team Profile Generator
 
 ## Table of contents
 
