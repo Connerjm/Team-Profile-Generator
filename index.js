@@ -94,8 +94,36 @@ function promptsUser(employeeType)
 function processAnswers()
 {
     let html = parse(answersArr);
-    console.log(html);
-    //TODO write to file.
+    fs.mkdir("./dist", error => { error ? console.error(error) : console.log("Created folder.");; })
+    fs.writeFile("./dist/index.html", html, error =>
+    {
+        error ? console.error(error) : console.log("Success! Find your HTML file in the dist folder.");
+    });
+    fs.writeFile("./dist/style.css", `header
+{
+    border-bottom: solid 2px black;
+    padding: 15px;
+    background-image: linear-gradient(to right, #360033, #0b8793);
+    text-align: center;
+    color: white;
+}
+
+.card
+{
+    margin: 25px;
+    box-shadow: 5px 10px 9px;
+    border: solid 1px black;
+    border-radius: 5px;
+}
+
+.top-half
+{
+    background-color: #0b8793;
+    color: white;
+}`, error =>
+    {
+        error ? console.error(error) : console.log("Success! Find the associated CSS in the same folder.");
+    });
 }
 
 /* Function calls */
