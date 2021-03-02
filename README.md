@@ -25,6 +25,9 @@ Team Profile Generator is a Node.js command line application that will ask a use
 
 ## Demonstration
 
+Quick and simple.
+![A short demo of the application in use.](./assets/TPG.gif)
+
 ## Install
 
 Start by cloning this project:
