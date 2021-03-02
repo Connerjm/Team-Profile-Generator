@@ -18,6 +18,10 @@ Team Profile Generator is a Node.js command line application that will ask a use
 
 ## Features
 
+Heres an example output based on some Wandavision characters.
+
+![Example rendered html file generated with this application.](./assets/example.png)
+
 - Builds an html file based on user input.
 - Includes header.
 - Each employee has a card with their information.
@@ -26,6 +30,7 @@ Team Profile Generator is a Node.js command line application that will ask a use
 ## Demonstration
 
 Quick and simple.
+
 ![A short demo of the application in use.](./assets/TPG.gif)
 
 ## Install

@@ -17,6 +17,7 @@ function parseEmployees(answers)
     let employeesArr = [];
     answers.forEach(employee =>
         {
+            //Determines which kind of employee must be created.
             if(employee.hasOwnProperty("officeNum"))
                 employeesArr.push(new Manager(employee.name, employee.id, employee.email, employee.officeNum));
             else if(employee.hasOwnProperty("github"))

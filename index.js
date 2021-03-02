@@ -1,8 +1,8 @@
 /* Imports */
 
-const inquirer = require("inquirer");
-const fs = require("fs");
-const parse = require("./src/parse");
+const inquirer = require("inquirer");//User input module.
+const fs = require("fs");//File system module for writing files.
+const parse = require("./src/parse");//My module for parsing input to html.
 
 /* Variables */
 
@@ -70,18 +70,18 @@ function promptsUser(employeeType)
         .then(answers =>
             {
                 answersArr.push(answers);
-                switch (answers.next)
+                switch (answers.next)//Decides what to do next.
                 {
-                    case "Engineer":
+                    case "Engineer"://Ask questions for engineer.
                         promptsUser("Engineer");
                         break;
-                    case "Intern":
+                    case "Intern"://Ask questions for intern.
                         promptsUser("Intern");
                         break;
-                    case "All done!":
+                    case "All done!"://Finish and process input.
                         processAnswers();
                         break;
-                    case "Cancel":
+                    case "Cancel"://Back out and cancel the application.
                         process.exit();
                 }
             })
@@ -91,15 +91,17 @@ function promptsUser(employeeType)
             });
 }
 
+//Takes the object array of answers from the inquirer questions and sends them off to be processed and turned into the html file.
 function processAnswers()
 {
     let html = parse(answersArr);
-    fs.mkdir("./dist", error => { error ? console.error(error) : console.log("Created folder.");; })
-    fs.writeFile("./dist/index.html", html, error =>
-    {
-        error ? console.error(error) : console.log("Success! Find your HTML file in the dist folder.");
-    });
-    fs.writeFile("./dist/style.css", `header
+    if (!fs.existsSync("./dist"))//Check if the dist folder exists or not.
+        fs.mkdir("./dist", error =>//If not, create it.
+        {
+            error ? console.error(error) : console.log("./dist folder created.");
+        });
+    fs.writeFileSync("./dist/index.html", html);//Writes the html and css file.
+    fs.writeFileSync("./dist/style.css", `header
 {
     border-bottom: solid 2px black;
     padding: 15px;
@@ -120,10 +122,7 @@ function processAnswers()
 {
     background-color: #0b8793;
     color: white;
-}`, error =>
-    {
-        error ? console.error(error) : console.log("Success! Find the associated CSS in the same folder.");
-    });
+}`);
 }
 
 /* Function calls */
